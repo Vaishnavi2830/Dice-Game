@@ -24,7 +24,7 @@ const GamePlay = () => {
 
     const randomNumber = generateRandomNumber(1, 7); //number till which random number is generated
 
-    setCurrentDice((prev) => randomNumber);
+    setCurrentDice(() => randomNumber);
 
     if (selectedNumber == randomNumber) {
       setScore((prev) => prev + randomNumber);
@@ -53,8 +53,7 @@ const GamePlay = () => {
       <RoleDice currentDice={currentDice} roleDice={roleDice} />
       <div className="btns">
         <OutlineButton onClick={resetScore}>Reset Score</OutlineButton>
-        <Button 
-        onClick={() => setShowRules((prev => !prev))}>
+        <Button onClick={() => setShowRules((prev) => !prev)}>
           {showRules ? "Hide" : "Show"}
         </Button>
       </div>
